@@ -17,6 +17,7 @@
 			$this->addmember = false;
 			$this->id = null;
 			$this->label = null;
+			$this->placeholder = null;
 			$this->levels = null;
 			$this->memberlistcsv = false;
 			$this->readonly = false;
@@ -280,6 +281,8 @@
 				$r = '<input type="text" id="' . $this->id . '" name="' . $this->name . '" value="' . esc_attr($value) . '" ';
 				if(!empty($this->size))
 					$r .= 'size="' . $this->size . '" ';
+				if(!empty($this->placeholder))
+					$r .= 'placeholder="' . $this->placeholder . '" ';
 				if(!empty($this->class))
 					$r .= 'class="' . $this->class . '" ';
 				if(!empty($this->readonly))
@@ -444,6 +447,8 @@
 			elseif($this->type == "textarea")
 			{
 				$r = '<textarea id="' . $this->id . '" name="' . $this->name . '" rows="' . $this->rows . '" cols="' . $this->cols . '" ';
+				if(!empty($this->placeholder))
+					$r .= 'placeholder="' . $this->placeholder . '" ';
 				if(!empty($this->class))
 					$r .= 'class="' . $this->class . '" ';
 				if(!empty($this->readonly))
